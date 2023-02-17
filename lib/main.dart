@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Home(),
+    home: const Home(),
   ));
 }
 
@@ -28,41 +28,67 @@ class _HomeState extends State<Home> {
             )
           ]),
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Icon(
-            Icons.person_outlined,
-            size: 120,
-            color: Colors.green,
-          ),
-          TextField(
-            decoration: InputDecoration(
-              label: Text("Peso (kg)"),
-              labelStyle: TextStyle(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Icon(
+              Icons.person_outlined,
+              size: 120,
+              color: Colors.green,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                label: Text("Peso (kg)"),
+                labelStyle: TextStyle(
+                  color: Colors.green,
+                ),
+              ),
+              textAlign: TextAlign.center,
+              style: TextStyle(
                 color: Colors.green,
+                fontSize: 25,
               ),
             ),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.green,
-              fontSize: 25,
-            ),
-          ),
-          TextField(
-            decoration: InputDecoration(
-              label: Text("Altura (cm)"),
-              labelStyle: TextStyle(
+            TextField(
+              decoration: InputDecoration(
+                label: Text("Altura (cm)"),
+                labelStyle: TextStyle(
+                  color: Colors.green,
+                ),
+              ),
+              textAlign: TextAlign.center,
+              style: TextStyle(
                 color: Colors.green,
+                fontSize: 25,
               ),
             ),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.green,
-              fontSize: 25,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 13),
+              child: Container(
+                height: 50,
+                child: ElevatedButton(
+                    onPressed: null,
+                    child: Text(
+                      "Calcular",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
+                    )),
+              ),
             ),
-          )
-        ],
+            Text(
+              'Info',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 25,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
